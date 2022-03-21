@@ -1,9 +1,10 @@
 import React from 'react'
-import { useStyles } from '../styles'
+import { useStyles } from '../styles';
 
-export default function logo() {
+export default function Logo() {
     const styles = useStyles();
   return (
-    <img src='/images/logo.png' className='largelogo'
-  )
+    <img src='/images/logo.png' className={styles.largeLogo}
+    ></img>
+  );
 }

@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, CssBaseline, Paper, ThemeProvider, StylesProvider } from "@material-ui/core";
+import HomeScreen from "./screen/HomeScreen";
+import { createTheme } from "@material-ui/core";
+// import { Store } from './Store';
+import React, { useContext } from 'react';
+const theme = createTheme({
+  typography:{
+    h1:{fontWeight: 'bold'},
+    h2:{
+      fontSize:'2rem',
+      color:'black',
+    },
+    h3:{
+      fontSize:'1.8 rem',
+      fontWeight:'bold',
+      color:'white',
+    },
+  },
+  palette:{
+    primary:{main: '#ff1744'},
+    secondary:{
+      main:'#118e16',
+      contrastText: '#ffffff',
+    },
+  },
+});
 
 function App() {
+  // const { state } = useContext(Store);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <Container maxWidth="sm">
+        <Paper>
+          <HomeScreen>
+
+          </HomeScreen>
+        </Paper>
+      </Container>
+    </ThemeProvider>
   );
 }
 

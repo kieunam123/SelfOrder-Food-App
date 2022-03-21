@@ -1,7 +1,8 @@
-import { Box, Card, CardActionArea, Typography } from '@material-ui/core'
-import React from 'react'
-import TouchAppIcon from '@material-ui/icons/TouchApp'
-import { useStyles } from '../styles'
+import { Box, Card, CardActionArea, Typography } from '@material-ui/core';
+import React from 'react';
+import TouchAppIcon from '@material-ui/icons/TouchApp';
+import { useStyles } from '../styles';
+import Logo from '../components/Logo';
 
 export default function HomeScreen() {
     const styles = useStyles();
@@ -9,23 +10,23 @@ export default function HomeScreen() {
     <Card>
         <CardActionArea>
             <Box className={[styles.root, styles.red]}>
-                <Box>
+                <Box className={[styles.main, styles.center]}>
                     <Typography component="h6" variant="h6">
                         Nhanh chóng & Tiện lợi
                     </Typography>
-                    <Typography component={"h1"} variant="h1">
+                    <Typography component="h1" variant="h1" className={styles.bold}>
                         Đặt món <br/> & Thanh toán <br/> Tại quầy
                     </Typography>
-                    <TouchAppIcon fontSize='large'> </TouchAppIcon>
+                    <TouchAppIcon fontSize="large"> </TouchAppIcon>
                 </Box>
-                <Box>
-                    <logo large></logo>
-                    <Typography component={"h5"} variant="h5">
+                <Box className={[styles.center, styles.green]}>
+                    <Logo large/>
+                    <Typography component="h5" variant="h5">
                         Chạm để bắt đầu
                     </Typography>
                 </Box>
             </Box>
         </CardActionArea>
     </Card>
-  )
+  );
 }
