@@ -24,16 +24,16 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: '#003080',
     },
     cards: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-    cards:{
-        margin: 10
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     },
-space:{
-    padding:10
-},
+    cards:{
+    margin: 10
+    },
+    space:{
+    padding:10,
+    },
 
     red:
     {
@@ -50,5 +50,9 @@ space:{
 
     largeLogo: {
         height: 100,
+    },
+
+    media:{
+        width:200
     },
 }));
