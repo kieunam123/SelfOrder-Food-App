@@ -15,7 +15,7 @@ export default function ChooseScreen() {
                     Bạn sẽ ăn ở đâu hôm nay?
                 </Typography>
                 <Box className={styles.cards}>
-                    <Card className={[styles.cards, styles.space]}>
+                    <Card className={[styles.card, styles.space]}>
                         <CardActionArea>
                             <CardMedia 
                                 component="img"
@@ -34,7 +34,7 @@ export default function ChooseScreen() {
                             </CardContent>
                         </CardActionArea>
                     </Card>
-                    <Card className={[styles.cards, styles.space]}>
+                    <Card className={[styles.card, styles.space]}>
                         <CardActionArea>
                             <CardMedia 
                                 component="img"

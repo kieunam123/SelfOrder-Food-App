@@ -38,12 +38,9 @@ function App() {
       <Container maxWidth="sm">
         <Paper>     
           <Routes>
-          <Route path="/"  element={<HomeScreen/>} exact></Route>
-          <Route path="/choose" element={<ChooseScreen/>} exact></Route>
+          <Route path="/"  element={<HomeScreen/>} exact={true} ></Route>
+          <Route path="/choose" element={<ChooseScreen/>} exact={true}></Route>
           </Routes>
-          <HomeScreen>
-
-          </HomeScreen>
         </Paper>
       </Container>
     </ThemeProvider>

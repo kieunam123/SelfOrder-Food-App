@@ -28,11 +28,11 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     },
-    cards:{
+    card:{
     margin: 10,
     },
     space:{
-    padding:10,
+    padding: 10,
     },
 
     red:

@@ -2,7 +2,7 @@ import { Box, Card, CardActionArea, Typography } from '@material-ui/core';
 import React from 'react';
 import TouchAppIcon from '@material-ui/icons/TouchApp';
 import { useStyles } from '../styles';
-import Logo from '../components/Logo';
+import Logo from  '../components/Logo';
 import {useNavigate} from 'react-router-dom'                                
 import { Replay } from '@material-ui/icons';
 
@@ -12,7 +12,7 @@ export default function HomeScreen() {
     // const confirm = () =>{navigate.push('/choose')}
   return (
     <Card>
-        <CardActionArea onClick={()=>navigate('/choose') }>
+        <CardActionArea onClick={()=>navigate('/choose')}>
             <Box className={[styles.root, styles.red]}>
                 <Box className={[styles.main, styles.center]}>
                     <Typography component="h6" variant="h6">
