@@ -3,12 +3,16 @@ import React from 'react';
 import TouchAppIcon from '@material-ui/icons/TouchApp';
 import { useStyles } from '../styles';
 import Logo from '../components/Logo';
+import {useNavigate} from 'react-router-dom'                                
+import { Replay } from '@material-ui/icons';
 
-export default function HomeScreen(props) {
+export default function HomeScreen() {
     const styles = useStyles();
+    const navigate = useNavigate();
+    // const confirm = () =>{navigate.push('/choose')}
   return (
     <Card>
-        <CardActionArea onClick={()=>props.history.push('/choose')}>
+        <CardActionArea onClick={()=>navigate('/choose') }>
             <Box className={[styles.root, styles.red]}>
                 <Box className={[styles.main, styles.center]}>
                     <Typography component="h6" variant="h6">

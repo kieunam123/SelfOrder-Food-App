@@ -29,7 +29,7 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     },
     cards:{
-    margin: 10
+    margin: 10,
     },
     space:{
     padding:10,
@@ -53,6 +53,6 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     media:{
-        width:200
+        width:200,
     },
 }));

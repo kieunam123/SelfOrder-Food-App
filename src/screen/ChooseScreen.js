@@ -1,7 +1,7 @@
 import { Box, Typography,Fade, Card, CardActionArea, CardMedia, CardContent } from '@material-ui/core'
-import React from 'react'
-import Logo from '../components/Logo'
-import { useStyles } from '../styles'
+import React from 'react';
+import Logo from '../components/Logo';
+import { useStyles } from '../styles';
 
 export default function ChooseScreen() {
     const styles = useStyles();

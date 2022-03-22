@@ -3,7 +3,7 @@ import HomeScreen from "./screen/HomeScreen";
 import { createTheme } from "@material-ui/core";
 // import { Store } from './Store';
 import React, { useContext } from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ChooseScreen from "./screen/ChooseScreen";
 
 
@@ -36,11 +36,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline/>
       <Container maxWidth="sm">
-        <Paper>
-          <Route path="/" component={HomeScreen} exact={true}></Route>
-          <Route path="/choose" component={ChooseScreen} exact={true}></Route>
+        <Paper>     
+          <Routes>
+          <Route path="/"  element={<HomeScreen/>} exact></Route>
+          <Route path="/choose" element={<ChooseScreen/>} exact></Route>
+          </Routes>
           <HomeScreen>
-              
+
           </HomeScreen>
         </Paper>
       </Container>
