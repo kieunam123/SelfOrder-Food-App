@@ -1,10 +1,21 @@
 import { Box, Typography,Fade, Card, CardActionArea, CardMedia, CardContent } from '@material-ui/core'
-import React from 'react';
+import React, { useContext } from 'react';
+import { setOrderType } from '../actions';
 import Logo from '../components/Logo';
 import { useStyles } from '../styles';
+import {useNavigate} from 'react-router-dom';
+import {Store} from './Store'
+
 
 export default function ChooseScreen() {
+    const navigate = useNavigate()
     const styles = useStyles();
+    const {dispatch}=useContext(Store);
+    const chooseHandler = (orderType) => {
+        setOrderType(dispatch, orderType);
+        navigate('/order');
+        
+    };
   return (
     <Fade in={true}>
         <Box className={[styles.root, styles.navy]}>
@@ -16,7 +27,7 @@ export default function ChooseScreen() {
                 </Typography>
                 <Box className={styles.cards}>
                     <Card className={[styles.card, styles.space]}>
-                        <CardActionArea>
+                        <CardActionArea onClick={()=> chooseHandler('Eat in')}>
                             <CardMedia 
                                 component="img"
                                 image="/images/eatin.png"
@@ -35,7 +46,7 @@ export default function ChooseScreen() {
                         </CardActionArea>
                     </Card>
                     <Card className={[styles.card, styles.space]}>
-                        <CardActionArea>
+                        <CardActionArea onClick={()=> chooseHandler('Eat in')}>
                             <CardMedia 
                                 component="img"
                                 image="/images/takeout.png"

@@ -3,7 +3,7 @@ import React from 'react';
 import TouchAppIcon from '@material-ui/icons/TouchApp';
 import { useStyles } from '../styles';
 import Logo from  '../components/Logo';
-import {useNavigate} from 'react-router-dom'                                
+import {useNavigate} from 'react-router-dom';                                
 import { Replay } from '@material-ui/icons';
 
 export default function HomeScreen() {
