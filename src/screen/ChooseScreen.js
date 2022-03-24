@@ -4,7 +4,7 @@ import { setOrderType } from '../actions';
 import Logo from '../components/Logo';
 import { useStyles } from '../styles';
 import {useNavigate} from 'react-router-dom';
-import {Store} from './Store'
+import {Store} from '../Store'
 
 
 export default function ChooseScreen() {
@@ -46,7 +46,7 @@ export default function ChooseScreen() {
                         </CardActionArea>
                     </Card>
                     <Card className={[styles.card, styles.space]}>
-                        <CardActionArea onClick={()=> chooseHandler('Eat in')}>
+                        <CardActionArea onClick={()=> chooseHandler('Take out')}>
                             <CardMedia 
                                 component="img"
                                 image="/images/takeout.png"
