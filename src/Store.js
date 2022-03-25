@@ -1,5 +1,5 @@
 import React, {createContext, useReducer} from "react";
-import { CATEROGY_LIST_FAIL, CATEROGY_LIST_REQUEST, CATEROGY_LIST_SUCCESS, ORDER_SET_TYPE } from "./constants";
+import { CATEGORY_LIST_FAIL, CATEGORY_LIST_REQUEST, CATEGORY_LIST_SUCCESS, ORDER_SET_TYPE } from "./constants";
 
 
 export const Store = createContext();
@@ -14,16 +14,16 @@ const initialState = {
 
 function reducer(state, action){
     switch(action.type){
-        case CATEROGY_LIST_REQUEST:
+        case CATEGORY_LIST_REQUEST:
             return{
                 ...state, categoryList: {loading: true}
              };
         
-        case CATEROGY_LIST_SUCCESS:
+        case CATEGORY_LIST_SUCCESS:
             return{
                 ...state, categoryList: {loading: false, categories: action.payload},
             };       
-        case CATEROGY_LIST_FAIL:
+        case CATEGORY_LIST_FAIL:
             return{
                 ...state, categoryList: {loading: false, error: action.payload},
             };                   

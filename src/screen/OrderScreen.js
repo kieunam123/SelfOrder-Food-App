@@ -1,13 +1,14 @@
-import React,{useEffect} from 'react'
+import React,{useContext, useEffect} from 'react'
 import { Avatar, Box, CircularProgress, Grid, List, ListItem } from '@material-ui/core';
 import { useStyles } from '../styles'
 import { listCategories } from '../actions';
 import Logo from '../components/Logo';
 import {Alert} from '@material-ui/lab';
+import { Store } from '../Store'
 
 export default function OrderScreen() {
     const styles=useStyles();
-    const {state,dispatch}=useContext(store); 
+    const {state,dispatch}=useContext(Store); 
     const {categories, loading, error} = state.categoryList;  
     useEffect(()=>{listCategories(dispatch);},[dispatch]);
   return (
@@ -29,7 +30,7 @@ export default function OrderScreen() {
                                     </Logo>
                                 </ListItem>
                                 
-                                {category.map((category) => (
+                                {categories.map((category) => (
                                     <ListItem key={category.name}>
                                       <Avatar alt = {category.name} src={category.image}/>
                                     </ListItem>
