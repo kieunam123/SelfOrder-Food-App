@@ -24,14 +24,14 @@ export default function OrderScreen() {
                             ): 
                             (
                             <>
-                                <ListItem>
+                                <ListItem button>
                                     <Logo>
 
                                     </Logo>
                                 </ListItem>
                                 
                                 {categories.map((category) => (
-                                    <ListItem key={category.name}>
+                                    <ListItem button key={category.name}>
                                       <Avatar alt = {category.name} src={category.image}/>
                                     </ListItem>
                                 ))}
