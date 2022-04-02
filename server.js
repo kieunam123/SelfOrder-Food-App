@@ -7,13 +7,15 @@ const app = express();
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URI,{
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-});
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+}, err => {
+    if(err) throw err;
+    console.log('Connected to MongoDB!!!')
+    });
 
 const Product = mongoose.model(
-    'product',
+    'products',
     new mongoose.Schema({
     name: String,
     description: String,
@@ -26,7 +28,7 @@ const Product = mongoose.model(
 app.get('/api/products/seed',async(req,res)=>{
     const products = await Product.insertMany(data.products);
     res.send({products});
-})
+});
 
 app.get('/api/categories', (req, res)=> {
     res.send(data.categories);
@@ -35,4 +37,4 @@ app.get('/api/categories', (req, res)=> {
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`sử dụng port : http://localhost:${port} `)
-})
+});

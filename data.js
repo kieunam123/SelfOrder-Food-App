@@ -92,7 +92,7 @@ const data = {
             khuyenmai: 'Freeship',
             price: 25000,
             image: '/images/sandwitch.jpg',
-        }
+        },
 
 
 
