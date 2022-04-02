@@ -1,5 +1,12 @@
 import React, {createContext, useReducer} from "react";
-import { CATEGORY_LIST_FAIL, CATEGORY_LIST_REQUEST, CATEGORY_LIST_SUCCESS, ORDER_SET_TYPE, PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS } from "./constants";
+import { CATEGORY_LIST_FAIL, 
+         CATEGORY_LIST_REQUEST, 
+         CATEGORY_LIST_SUCCESS, 
+         ORDER_SET_TYPE, 
+         PRODUCT_LIST_FAIL, 
+         PRODUCT_LIST_REQUEST, 
+         PRODUCT_LIST_SUCCESS,
+        } from "./constants";
 
 
 export const Store = createContext();

@@ -9,7 +9,6 @@ import { Store } from '../Store'
 
 export default function OrderScreen() {
     const styles=useStyles();
-    const [categoryName, setCategoryName] = useState('');
     const {state,dispatch}=useContext(Store); 
     const {categories, loading, error} = state.categoryList;
     const{
@@ -17,13 +16,15 @@ export default function OrderScreen() {
         loading: loadingProducts,
         error: errorProducts,
     }  = state.productList;
+    const [categoryName, setCategoryName] = useState('');
+    
     useEffect(()=>{
         if(!categories){
             listCategories(dispatch);
         } else {
             listProducts(dispatch, categoryName);
         }
-        },[dispatch, categories, categoryName]);
+        },[categories, categoryName]);
 
     const categoryClickHandler = (name) => {
         setCategoryName(name);
@@ -43,42 +44,37 @@ export default function OrderScreen() {
                             ): 
                             (
                             <>
-                                <ListItem button>
-                                    <Logo>
-
-                                    </Logo>
+                                <ListItem button onClick={()=>categoryClickHandler('')}>
+                                    <Logo></Logo>
                                 </ListItem>
-                                
                                 {categories.map((category) => (
-                                    <ListItem button key={category.name}
-                                        onClick={()=>categoryClickHandler(category.name)}
+                                    <ListItem 
+                                        key={category.name}
+                                        button onClick={()=>categoryClickHandler(category.name)}
                                     >
-
                                       <Avatar alt = {category.name} src={category.image}/>
                                     </ListItem>
                                 ))}
                             </>
-                            
                             )}
-                      
                     </List>
                 </Grid>
                 <Grid item md={10}>
                     <Typography
                         gutterBottom
                         className={styles.title}
-                        variant='h2'
-                        component='h2'
+                        variant="h2"
+                        component="h2"
                     >
-                        {categoryName || 'Main Menu'}
+                        {categoryName || "Main Menu"}
                     </Typography>
                     <Grid container spacing={1}>
                     {loadingProducts ? (
                             <CircularProgress/>
                         ): errorProducts ? (
-                            <Alert severity='error'>{errorProducts}</Alert>
+                            <Alert severity="error">{errorProducts}</Alert>
                         ):(
-                            products.map((product)=>
+                            products.map((product)=>(
                                 <Grid item md={6}>
                                     <Card
                                         className={styles.card}
@@ -90,7 +86,7 @@ export default function OrderScreen() {
                                                 image={product.image}
                                                 className={styles.media}
                                                 />
-                                        </CardActionArea>
+                                        
                                         <CardContent>
                                             <Typography
                                             gutterBottom
@@ -100,8 +96,7 @@ export default function OrderScreen() {
                                             >
                                                 {product.name}
                                             </Typography>
-                                            <Box className={styles.cardFooter}>
-                                                
+                                            <Box className={styles.cardFooter}> 
                                                 <Typography
                                                     variant="body2"
                                                     color="textPrimary"
@@ -116,11 +111,12 @@ export default function OrderScreen() {
                                                 >
                                                     Khuyến mãi: {product.khuyenmai}  
                                                 </Typography>
-                                            </Box>
-                                        </CardContent>
+                                                </Box>
+                                            </CardContent>
+                                        </CardActionArea>
                                     </Card>
-                                </Grid>)
-                                
+                                </Grid>
+                            )) 
                         )}
                     </Grid>
                 </Grid>

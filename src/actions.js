@@ -1,4 +1,11 @@
-import { ORDER_SET_TYPE, CATEGORY_LIST_REQUEST, CATEGORY_LIST_FAIL, CATEGORY_LIST_SUCCESS, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL} from "./constants";
+import { ORDER_SET_TYPE, 
+         CATEGORY_LIST_REQUEST, 
+         CATEGORY_LIST_FAIL, 
+         CATEGORY_LIST_SUCCESS, 
+         PRODUCT_LIST_REQUEST, 
+         PRODUCT_LIST_SUCCESS, 
+         PRODUCT_LIST_FAIL,
+        } from "./constants";
 import Axios from 'axios';
 
 export const setOrderType = ( dispatch, orderType) => {

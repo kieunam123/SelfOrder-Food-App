@@ -12,6 +12,7 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         textAlign: 'center',
       },
+    column: { flexDirection: 'column' },
     main:{
         flex: 1,
         overflow: 'auto',
@@ -31,6 +32,10 @@ export const useStyles = makeStyles((theme) => ({
     card:{
     margin: 10,
     },
+    title:{
+        marginTop: 18,
+    },
+
     space:{
     padding: 10,
     },
