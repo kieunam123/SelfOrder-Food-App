@@ -1,4 +1,4 @@
-import { ORDER_SET_TYPE, CATEGORY_LIST_REQUEST, CATEGORY_LIST_FAIL, CATEGORY_LIST_SUCCESS} from "./constants";
+import { ORDER_SET_TYPE, CATEGORY_LIST_REQUEST, CATEGORY_LIST_FAIL, CATEGORY_LIST_SUCCESS, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL} from "./constants";
 import Axios from 'axios';
 
 export const setOrderType = ( dispatch, orderType) => {
@@ -23,4 +23,20 @@ export const listCategories = async (dispatch) => {
         });
     }
 
-}
+};
+
+export const listProducts = async (dispatch, categoryName = '') => {
+    dispatch({type: PRODUCT_LIST_REQUEST});
+    try{
+        const {data}=await Axios.get(`/api/products?category=${categoryName}`); 
+        return dispatch({
+            type: PRODUCT_LIST_SUCCESS,
+            payload: data,
+        });
+    } catch(error){
+        return dispatch({
+            type: PRODUCT_LIST_FAIL,
+            payload: error.message,
+        });
+    }
+};
