@@ -17,7 +17,7 @@ export default function OrderScreen() {
         error: errorProducts,
     }  = state.productList;
     const [categoryName, setCategoryName] = useState('');
-    
+
     useEffect(()=>{
         if(!categories){
             listCategories(dispatch);
@@ -99,17 +99,17 @@ export default function OrderScreen() {
                                             <Box className={styles.cardFooter}> 
                                                 <Typography
                                                     variant="body2"
-                                                    color="textPrimary"
-                                                    component="p"
-                                                >
-                                                    Giá: {product.price}VNĐ
-                                                </Typography>
-                                                <Typography
-                                                    variant="body2"
                                                     color="textSecondary"
                                                     component="p"
                                                 >
                                                     Khuyến mãi: {product.khuyenmai}  
+                                                </Typography>
+                                                <Typography
+                                                    variant="body2"
+                                                    color="textPrimary"
+                                                    component="p"
+                                                >
+                                                    Giá: {product.price}VNĐ
                                                 </Typography>
                                                 </Box>
                                             </CardContent>
