@@ -58,16 +58,16 @@ const data = {
             price: 30000,
             image: '/images/bun-real-xuong.jpg',
         },
-        {
-            category: 'Bữa Sáng',
-            name: 'Phở Bò',
-            khuyenmai: 'Freeship',
-            price: 30000,
-            image: '/images/pho.jpeg',
-        },
+        // {
+        //     category: 'Bữa Sáng',
+        //     name: 'Phở Bòass',
+        //     khuyenmai: 'Freeship',
+        //     price: 30000,
+        //     image: '/images/pho.jpeg',
+        // },
         {
             category: 'Burgers',
-            name: 'Burger thường',
+            name: 'Burger thườngg',
             khuyenmai: 'Freeship',
             price: 25000,
             image: '/images/burger-thuong.jpg',
@@ -86,13 +86,13 @@ const data = {
             price: 35000,
             image: '/images/burger-dac-biet.jpg',
         },
-        {
-            category: 'Burgers',
-            name: 'Sandwitch',
-            khuyenmai: 'Freeship',
-            price: 25000,
-            image: '/images/sandwitch.jpg',
-        },
+        // {
+        //     category: 'Burgers',
+        //     name: 'Sandwitch',
+        //     khuyenmai: 'Freeship',
+        //     price: 25000,
+        //     image: '/images/sandwitch.jpg',
+        // },
 
 
 
