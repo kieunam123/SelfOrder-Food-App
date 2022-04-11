@@ -5,6 +5,8 @@ import { ORDER_SET_TYPE,
          PRODUCT_LIST_REQUEST, 
          PRODUCT_LIST_SUCCESS, 
          PRODUCT_LIST_FAIL,
+         ORDER_ADD_ITEM,
+         ORDER_REMOVE_ITEM,
         } from "./constants";
 import Axios from 'axios';
 
@@ -46,4 +48,18 @@ export const listProducts = async (dispatch, categoryName = '') => {
             payload: error.message,
         });
     }
+};
+
+export const addToOrder = async ( dispatch, item) => {
+    return dispatch({
+        type: ORDER_ADD_ITEM,
+        payload: item,
+    });
+};
+
+export const removeFromOrder = async (dispatch, item) => {
+    return dispatch({
+        type: ORDER_REMOVE_ITEM,
+        payload: item,
+    });
 };

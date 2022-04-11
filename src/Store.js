@@ -2,6 +2,7 @@ import React, {createContext, useReducer} from "react";
 import { CATEGORY_LIST_FAIL, 
          CATEGORY_LIST_REQUEST, 
          CATEGORY_LIST_SUCCESS, 
+         ORDER_ADD_ITEM, 
          ORDER_SET_TYPE, 
          PRODUCT_LIST_FAIL, 
          PRODUCT_LIST_REQUEST, 
@@ -17,6 +18,7 @@ const initialState = {
     order:
     {
         orderType: 'Eat in',
+        OrderItems: [],
     },
 };
 
@@ -55,6 +57,17 @@ function reducer(state, action){
                 ...state,
                 order: {...state.order, orderType: action.payload },
              };
+        case ORDER_ADD_ITEM:{
+            const item = action.payload;
+            const existItem = state.order.orderItems.find(
+                (x) => x.name === item.name
+            );
+            const orderItems = existItem
+            ? state.order.orderItem.map((x) => 
+                x.name === existItem.name ? item : x
+            )
+            : [...state.order.orderItems, item];
+        }    
     default:
         return state;
     }
