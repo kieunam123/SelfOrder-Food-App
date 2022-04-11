@@ -1,14 +1,36 @@
 import React,{useContext, useEffect, useState} from 'react'
-import { Avatar, Box, Card, CardActionArea, CardContent, CardMedia, CircularProgress, Grid, List, ListItem, Typography } from '@material-ui/core';
+import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, CircularProgress, DialogTitle, Grid, List, ListItem, TextField, Typography } from '@material-ui/core';
 import { useStyles } from '../styles'
 import { listCategories, listProducts } from '../actions';
 import Logo from '../components/Logo';
 import {Alert} from '@material-ui/lab';
-import { Store } from '../Store'
+import { Store } from '../Store';
+import RemoveIcon from '@material-ui/icons/Remove';
 // import { products } from '../data';
 
 export default function OrderScreen() {
     const styles=useStyles();
+    const [categoryName, setCategoryName] = useState('');
+    const [quantity,setQuantity] = useState(1);
+    const [isOpen, setIsOpen] = UseState(false);
+    const [product, setProduct] = UseState({});
+
+    const closeHandler = () => {
+        setIsOpen(false);
+    };
+
+    const productClickHandler = (p) => {
+        setProduct(p);
+        setIsOpen(true);
+    };
+
+    const addToOrderHandler = () => {
+        addToOrder(dispatch, {...product, quantity});
+        setIsOpen(false);
+
+
+    };
+
     const {state,dispatch}=useContext(Store); 
     const {categories, loading, error} = state.categoryList;
     const{
@@ -16,7 +38,6 @@ export default function OrderScreen() {
         loading: loadingProducts,
         error: errorProducts,
     }  = state.productList;
-    const [categoryName, setCategoryName] = useState('');
 
     useEffect(()=>{
         if(!categories){
@@ -24,7 +45,7 @@ export default function OrderScreen() {
         } else {
             listProducts(dispatch, categoryName);
         }
-        },[categories, categoryName]);
+        },[dispatch, categories, categoryName]);
 
     const categoryClickHandler = (name) => {
         setCategoryName(name);
@@ -33,6 +54,72 @@ export default function OrderScreen() {
 
   return (
     <Box className={styles.root}>
+        <Diaglog
+        maxWidth="sm"
+        fullWidth={true}
+        open={isOpen}
+        onClose={closeHandler}
+        >
+            <DialogTitle className={styles.center}>
+                Add {product.name}
+            </DialogTitle>
+             <Box className={[styles.row, styles.center]}>
+                <Button 
+                    variant="contained"
+                    color="primary"
+                    disabled={quanlity === 1}
+                    onClick={(e) => quantity > 1 && setQuantity(quantity - 1)}
+                    >
+                        <RemoveIcon/>
+                    </Button>
+                    <TextField
+                    inputProps={{className: styles.largeInput}}
+                    InputProps={{
+                        bar: true,
+                        inputProps :{
+                            className:styles.largeInput,
+                        },
+                    }}
+                    className={styles.largeNumber}
+                    type="number"
+                    variant="filled"
+                    min={1}
+                    value={quantity}
+                    />
+                    <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={(e)=>setQuantity(quantity + 1)}
+                    >
+                        <AddIcon/>
+                    </Button>
+             </Box>
+             <Box className={[styles.row, styles.around]}>
+                 <Button
+                 onClick={cancelOrRemoveFromOrder}
+                 variant="contained"
+                 color = "primary"
+                 size="large"
+                 className={styles.largeButton}
+                 >
+                     {OrderItem.find((x)=>x.name === product.name)
+                     ? 'Xoá khỏi giỏ hàng'
+                     : 'Huỷ'
+                     }
+                 </Button>
+
+                 <Button
+                 onClick={addToOrderHandler}
+                 variant="contained"
+                 color="primary"
+                 size="large"
+                 className={styles.largeButton}
+                 >
+                     Thêm Vào Giỏ Hàng
+                 </Button>
+
+             </Box>
+        </Diaglog>
         <Box className={styles.main}>
             <Grid Container>
                 <Grid item md={2}>
@@ -78,6 +165,7 @@ export default function OrderScreen() {
                                 <Grid item md={6}>
                                     <Card
                                         className={styles.card}
+                                        onClick={() => productClickHandler(product)}
                                         >
                                         <CardActionArea>
                                             <CardMedia
@@ -86,7 +174,6 @@ export default function OrderScreen() {
                                                 image={product.image}
                                                 className={styles.media}
                                                 />
-                                        
                                         <CardContent>
                                             <Typography
                                             gutterBottom
