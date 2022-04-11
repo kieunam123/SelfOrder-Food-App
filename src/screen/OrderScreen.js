@@ -27,8 +27,11 @@ export default function OrderScreen() {
     const addToOrderHandler = () => {
         addToOrder(dispatch, {...product, quantity});
         setIsOpen(false);
+    };
 
-
+    const cancelOrRemoveFromOrder = () => {
+        removeFromOrder(dispatch, product);
+        setIsOpen(false);
     };
 
     const {state,dispatch}=useContext(Store); 
