@@ -67,6 +67,14 @@ function reducer(state, action){
                 x.name === existItem.name ? item : x
             )
             : [...state.order.orderItems, item];
+
+            return{
+                ...state,
+                order: {
+                    ...state.order,
+                    orderItems,
+                },
+            };
         }    
     default:
         return state;
