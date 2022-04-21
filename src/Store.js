@@ -4,9 +4,11 @@ import { CATEGORY_LIST_FAIL,
          CATEGORY_LIST_SUCCESS, 
          ORDER_ADD_ITEM, 
          ORDER_SET_TYPE, 
+         ORDER_REMOVE_ITEM,
          PRODUCT_LIST_FAIL, 
          PRODUCT_LIST_REQUEST, 
          PRODUCT_LIST_SUCCESS,
+         ORDER_CLEAR,
         } from "./constants";
 
 
@@ -68,14 +70,59 @@ function reducer(state, action){
             )
             : [...state.order.orderItems, item];
 
+            const itemsCount = orderItems.reduce((a,c) => a + c.quality, 0);
+            const itemsPrice =  orderItems.reduce(
+                (a,c) => a + c.quality * c.price,
+                0
+            );
+            const taxPrice = Math.round(0.15 * itemsPrice *100) / 100;
+            const totalPrice = Math.round((itemsPrice + taxPrice)*100)/100;
+
             return{
                 ...state,
                 order: {
                     ...state.order,
                     orderItems,
+                    taxPrice,
+                    totalPrice,
+                    itemsCount,
                 },
             };
         }    
+        case ORDER_REMOVE_ITEM: {
+            const orderItems = state.order.orderItems.filter(
+                (x) => x.name !== action.payload.name
+            );
+            const itemsCount = OrderItems.reduce((a,c) => a + c.quantity, 0);
+            const itemsPrice = orderItems.reduce(
+                (a,c) => a+c.quantity * c.Price,
+                0
+            );
+            const taxPrice = Math.round(0.15 * itemsPrice * 100) / 100;
+            const totalPrice = Math.round((itemsPrice + taxPrice) * 100 ) / 100;
+            return{
+                ...state,
+                order: {
+                    ...state.order,
+                    orderItems,
+                    taxPrice,
+                    totalPrice,
+                    itemsCount, 
+                },
+            };
+        }
+        case ORDER_CLEAR:
+            return{
+                ...state,
+                order:
+                {
+                    orderItems : [],
+                    taxPrice: 0,
+                    totalPriceL: 0,
+                    itemsCount: 0,
+
+                },
+            };
     default:
         return state;
     }

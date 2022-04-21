@@ -6,9 +6,11 @@ import Logo from '../components/Logo';
 import {Alert} from '@material-ui/lab';
 import { Store } from '../Store';
 import RemoveIcon from '@material-ui/icons/Remove';
+import { addToOrder,removeFromOrder,clearOrder } from '../actions';
+
 // import { products } from '../data';
 
-export default function OrderScreen() {
+export default function OrderScreen(props) {
     const styles=useStyles();
     const [categoryName, setCategoryName] = useState('');
     const [quantity,setQuantity] = useState(1);
@@ -42,6 +44,14 @@ export default function OrderScreen() {
         error: errorProducts,
     }  = state.productList;
 
+    const {
+        orderItems,
+        itemsCount,
+        totalPrice,
+        taxPrice,
+        orderType,
+    } = state.order;
+
     useEffect(()=>{
         if(!categories){
             listCategories(dispatch);
@@ -53,6 +63,10 @@ export default function OrderScreen() {
     const categoryClickHandler = (name) => {
         setCategoryName(name);
         listProducts(dispatch, categoryName); 
+    };
+
+    const previewOrderHandler = () => {
+        props.history.push(`/review`);
     };
 
   return (
@@ -212,7 +226,36 @@ export default function OrderScreen() {
                 </Grid>
             </Grid>
         </Box>
-
+        <Box>
+            <Box>
+                <Box className={[styles.bordered, styles.space]}>
+                    Đơn hàng của bạn : {orderType} | Tax: {taxPrice}VNĐ | Tổng: {totalPrice}VNĐ |
+                    Số lượng: {itemsCount}
+                </Box>
+                <Box className={[styles.row, styles.around]}>
+                    <Button
+                    onClick={() => {
+                        clearOrder(dispatch);
+                        props.history.push('/');
+                    }}
+                    variant="contained"
+                    color="primary"
+                    className={styles.largeButton}
+                    >
+                        Huỷ
+                    </Button>
+                    <Button
+                    onClick={previewOrderHandler}
+                    variant="contained"
+                    color="primary"
+                    disabled={orderItems.length === 0}
+                    className={styles.largeButton}
+                    >
+                        Đặt món
+                    </Button>
+                </Box>
+            </Box>
+        </Box>
     </Box>
   )
 }

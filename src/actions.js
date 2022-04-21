@@ -7,6 +7,7 @@ import { ORDER_SET_TYPE,
          PRODUCT_LIST_FAIL,
          ORDER_ADD_ITEM,
          ORDER_REMOVE_ITEM,
+         ORDER_CLEAR,
         } from "./constants";
 import Axios from 'axios';
 
@@ -61,5 +62,11 @@ export const removeFromOrder = async (dispatch, item) => {
     return dispatch({
         type: ORDER_REMOVE_ITEM,
         payload: item,
+    });
+};
+
+export const clearOrder = async (dispatch) => {
+    return dispatch({
+        type: ORDER_CLEAR,
     });
 };
