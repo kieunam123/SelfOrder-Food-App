@@ -93,7 +93,7 @@ function reducer(state, action){
             const orderItems = state.order.orderItems.filter(
                 (x) => x.name !== action.payload.name
             );
-            const itemsCount = OrderItems.reduce((a,c) => a + c.quantity, 0);
+            const itemsCount = orderItems.reduce((a,c) => a + c.quantity, 0);
             const itemsPrice = orderItems.reduce(
                 (a,c) => a+c.quantity * c.Price,
                 0

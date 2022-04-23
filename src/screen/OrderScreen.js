@@ -1,5 +1,5 @@
 import React,{useContext, useEffect, useState} from 'react'
-import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, CircularProgress, DialogTitle, Grid, List, ListItem, TextField, Typography } from '@material-ui/core';
+import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, CircularProgress, Dialog, DialogTitle, Grid, List, ListItem, TextField, Typography } from '@material-ui/core';
 import { useStyles } from '../styles'
 import { listCategories, listProducts } from '../actions';
 import Logo from '../components/Logo';
@@ -7,6 +7,8 @@ import {Alert} from '@material-ui/lab';
 import { Store } from '../Store';
 import RemoveIcon from '@material-ui/icons/Remove';
 import { addToOrder,removeFromOrder,clearOrder } from '../actions';
+import AddIcon from '@material-ui/icons/Add'
+
 
 // import { products } from '../data';
 
@@ -14,8 +16,8 @@ export default function OrderScreen(props) {
     const styles=useStyles();
     const [categoryName, setCategoryName] = useState('');
     const [quantity,setQuantity] = useState(1);
-    const [isOpen, setIsOpen] = UseState(false);
-    const [product, setProduct] = UseState({});
+    const [isOpen, setIsOpen] =  useState(false);
+    const [product, setProduct] = useState({});
 
     const closeHandler = () => {
         setIsOpen(false);
@@ -71,7 +73,7 @@ export default function OrderScreen(props) {
 
   return (
     <Box className={styles.root}>
-        <Diaglog
+        <Dialog
         maxWidth="sm"
         fullWidth={true}
         open={isOpen}
@@ -84,7 +86,7 @@ export default function OrderScreen(props) {
                 <Button 
                     variant="contained"
                     color="primary"
-                    disabled={quanlity === 1}
+                    disabled={quantity === 1}
                     onClick={(e) => quantity > 1 && setQuantity(quantity - 1)}
                     >
                         <RemoveIcon/>
@@ -112,31 +114,30 @@ export default function OrderScreen(props) {
                     </Button>
              </Box>
              <Box className={[styles.row, styles.around]}>
-                 <Button
-                 onClick={cancelOrRemoveFromOrder}
-                 variant="contained"
-                 color = "primary"
-                 size="large"
-                 className={styles.largeButton}
-                 >
-                     {OrderItem.find((x)=>x.name === product.name)
-                     ? 'Xoá khỏi giỏ hàng'
-                     : 'Huỷ'
-                     }
-                 </Button>
+             <Button
+              onClick={cancelOrRemoveFromOrder}
+              variant="contained"
+              color="primary"
+              size="large"
+              className={styles.largeButton}
+            >
+              {/* {orderItems.find((x) => x.name === product.name)
+                ? 'Xoá khỏi giỏ hàng'
+                : 'Huỷ'} */}
+            </Button>
 
-                 <Button
-                 onClick={addToOrderHandler}
-                 variant="contained"
-                 color="primary"
-                 size="large"
-                 className={styles.largeButton}
-                 >
-                     Thêm Vào Giỏ Hàng
-                 </Button>
+            <Button
+                onClick={addToOrderHandler}
+                variant="contained"
+                color="primary"
+                size="large"
+                className={styles.largeButton}
+                >
+                Thêm Vào Giỏ Hàng
+            </Button>
 
              </Box>
-        </Diaglog>
+        </Dialog>
         <Box className={styles.main}>
             <Grid Container>
                 <Grid item md={2}>
@@ -245,11 +246,11 @@ export default function OrderScreen(props) {
                         Huỷ
                     </Button>
                     <Button
-                    onClick={previewOrderHandler}
-                    variant="contained"
-                    color="primary"
-                    disabled={orderItems.length === 0}
-                    className={styles.largeButton}
+                    // onClick={previewOrderHandler}
+                    // variant="contained"
+                    // color="primary"
+                    // disabled={orderItems.length === 0}
+                    // className={styles.largeButton}
                     >
                         Đặt món
                     </Button>
