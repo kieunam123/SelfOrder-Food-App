@@ -5,7 +5,8 @@
 4. `npm run server`
 5. `npm start`
 
-**NOTE:**You may need to install [Nodejs] at here (https://nodejs.org/en/download/) and install [MongoDB] `npm i mongoose`
+**NOTE:**You may need to install [Nodejs](https://nodejs.org/en/download/) and install **MongoDB** 
+`npm i mongoose`
 
 # Getting Started with Create React App
 
@@ -79,7 +80,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-# FOOD SELF-ORDER KIOSK APPLICATION
+# FOOD SELF-ORDER KIOSK APPL
 libraries: 
 - Material UI to build professional looking web applications
 - Themes, Animations, Modals, Boxes, Forms and etc
@@ -89,4 +90,3 @@ libraries:
 - MongoDB and Mongoose to manage orders in the backend
 - Heroku to deploy your web application on cloud servers
 
-This course is for non-coders or juniors who want to be a pro developer and find a job in 22 million job opportunities around the world.
