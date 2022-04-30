@@ -5,7 +5,7 @@
 4. `npm run server`
 5. `npm start`
 
-**NOTE:**You may need to install [Nodejs](https://nodejs.org/en/download/) and install **MongoDB** 
+**NOTE:** You may need to install [Nodejs](https://nodejs.org/en/download/) and install **MongoDB** 
 `npm i mongoose`
 
 # Getting Started with Create React App
