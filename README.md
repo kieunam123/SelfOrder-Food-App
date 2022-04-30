@@ -1,5 +1,5 @@
 # HOW TO RUN THIS APP
-1. open terminal / cmd
+1. open terminal / CMD
 2. Cd to this folder on your computer
 3. type in `npm install`
 4. `npm run server`
