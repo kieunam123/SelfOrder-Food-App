@@ -79,6 +79,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   card: { margin: 10 },
   media: { width: 200 },
+  name: {fontWeight:'bold'},
   ready: {
     backgroundColor: '#003080',
     color: '#ffffff',
@@ -106,4 +107,5 @@ export const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+
 }));

@@ -1,102 +1,74 @@
 const data = {
-    categories: [
-        {
-            name:'Đồ Uống',
-            image:'/images/beverages.jpg',
-
-        },
-        {
-            name : 'Bữa Sáng',
-            image: '/images/breakfast.jpg',
-        },
-        {
-            name: 'Burgers',
-            image: '/images/burgers.jpg',
-        },
-    ],
-    products:[
-        {
-            category: 'Đồ Uống',
-            name: 'Coca',
-            khuyenmai: 'mua 1 tặng 1',
-            price: 12000,
-            image: '/images/coca.jpg',
-            
-        },
-        {
-            category: 'Đồ Uống',
-            name: 'Sôcôla sữa Shake',
-            khuyenmai: 'giảm 5%',
-            price: 25000,
-            image: '/images/socola.jpg',
-        },
-        {
-            category: 'Đồ Uống',
-            name: 'Bạc xỉu',
-            khuyenmai: 'Freeship',
-            price: 10000,
-            image: '/images/bacxiu.jpg',
-        },
-        {
-            category: 'Bữa Sáng',
-            name: 'Bánh mì',
-            khuyenmai: 'Freeship',
-            price: 20000,
-            image: '/images/banh-mi.png',
-        },
-        {
-            category: 'Bữa Sáng',
-            name: 'Cơm Sườn',
-            khuyenmai: 'Freeship',
-            price: 30000,
-            image: '/images/com-suon.jpg',
-        },
-        {            
-            category: 'Bữa Sáng',
-            name: 'Bún Real',
-            khuyenmai: 'Freeship',
-            price: 30000,
-            image: '/images/bun-real-xuong.jpg',
-        },
-        // {
-        //     category: 'Bữa Sáng',
-        //     name: 'Phở Bòass',
-        //     khuyenmai: 'Freeship',
-        //     price: 30000,
-        //     image: '/images/pho.jpeg',
-        // },
-        {
-            category: 'Burgers',
-            name: 'Burger thườngg',
-            khuyenmai: 'Freeship',
-            price: 25000,
-            image: '/images/burger-thuong.jpg',
-        },
-        {
-            category: 'Burgers',
-            name: 'Burger đặc biệt',
-            khuyenmai: 'Freeship',
-            price: 30000,
-            image: '/images/burger-2-tang.jpg',
-        },
-        {
-            category: 'Burgers',
-            name: 'Burger siêu to khổng lồ',
-            khuyenmai: 'Freeship',
-            price: 35000,
-            image: '/images/burger-dac-biet.jpg',
-        },
-        // {
-        //     category: 'Burgers',
-        //     name: 'Sandwitch',
-        //     khuyenmai: 'Freeship',
-        //     price: 25000,
-        //     image: '/images/sandwitch.jpg',
-        // },
-
-
-
-    ],
+  categories: [
+    { name: 'Đồ Uống', image: '/images/beverages.jpg' },
+    { name: 'Bữa Sáng', image: '/images/breakfast.jpg' },
+    { name: 'Burgers', image: '/images/burgers.jpg' },
+  ],
+  products: [
+    {
+      category: 'Thức uống',
+      name: 'Coca-Cola',
+      khuyenmai: 'Mua 1 tặng 1',
+      price: 1,
+      image: '/images/t-mcdonalds-Coca-Cola-Classic-Small.jpg',
+    },
+    {
+      category: 'Đồ Uống',
+      name: 'Vanill Shake',
+      price: 1.5,
+      khuyenmai: 'Giảm 10%',
+      image: '/images/t-mcdonalds-Vanilla-McCafe-Shake-Medium.jpg',
+    },
+    {
+      category: 'Đồ Uống',
+      name: 'Hot Chocolate',
+      price: 2,
+      khuyenmai: 'Freeship',
+      image: '/images/t-mcdonalds-McCafe-Hot-Chocolate-Medium.jpg',
+    },
+    {
+      category: 'Bữa Sáng',
+      name: 'Bacon & Biscuit',
+      price: 1.9,
+      khuyenmai: 'Giảm 20%',
+      image:
+        '/images/t-mcdonalds-Bacon-Egg-Cheese-Biscuit-Regular-Size-Biscuit.jpg',
+    },
+    {
+      category: 'Bữa Sáng',
+      name: 'Blueberry Muffin',
+      price: 1.5,
+      khuyenmai: 'Giảm 99%',
+      image: '/images/t-blueberry-muffin.jpg',
+    },
+    {
+      category: 'Bữa Sáng',
+      name: 'Big Breakfast',
+      price: 3,
+      khuyenmai: 'Hoàn 50k',
+      image: '/images/s-mcdonalds-Big-Breakfast-Regular-Size-Biscuit.jpg',
+    },
+    {
+      category: 'Burgers',
+      name: 'Big Mac',
+      price: 1.9,
+      khuyenmai: 'Tặng tăm xỉa răng',
+      image: '/images/t-mcdonalds-Big-Mac.jpg',
+    },
+    {
+      category: 'Burgers',
+      name: 'Hamburger',
+      price: 1.5,
+      khuyenmai: 'Tặng 1 coca',
+      image: '/images/t-mcdonalds-Hamburger.jpg',
+    },
+    {
+      category: 'Burgers',
+      name: 'McDouble',
+      price: 3,
+      khuyenmai: 'Mua 2 tặng 1',
+      image: '/images/t-mcdonalds-McDouble.jpg',
+    },
+  ],
 };
-
 module.exports = data;
