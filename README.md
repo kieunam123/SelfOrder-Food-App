@@ -1,4 +1,4 @@
-# HOW TO RUN THIS APPLICATION
+# HOW TO RUN THIS APP
 1. open terminal / cmd
 2. Cd to this folder on your computer
 3. type in `npm install`
@@ -80,7 +80,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-# FOOD SELF-ORDER KIOSK APPL
+# FOOD SELF-ORDER KIOSK APP
 libraries: 
 - Material UI to build professional looking web applications
 - Themes, Animations, Modals, Boxes, Forms and etc
