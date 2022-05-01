@@ -2,10 +2,10 @@
 1. open terminal / CMD
 2. Cd to this folder on your computer
 3. type in `npm install`
-4. `npm run server`
-5. `npm start`
+4. type in `node server.js`
+5. go to https://localhost:5000 in your browser
 
-**NOTE:** You may need to install [Nodejs](https://nodejs.org/en/download/) and install **MongoDB** 
+**NOTE:** You may need to install [Nodejs](https://nodejs.org/en/download/) and install **MongoDB**  
 `npm i mongoose`
 
 # Getting Started with Create React App
