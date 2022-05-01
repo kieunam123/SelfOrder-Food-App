@@ -200,7 +200,7 @@ export default function OrderScreen(props) {
                         className={styles.card}
                         onClick={() => productClickHandler(product)}
                       >
-                        <CardActionArea>
+                        <CardActionArea className={styles.cardsContent}>
                           <CardMedia
                             component="img"
                             alt={product.name}

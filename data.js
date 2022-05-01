@@ -27,6 +27,13 @@ const data = {
       image: '/images/t-mcdonalds-McCafe-Hot-Chocolate-Medium.jpg',
     },
     {
+      category: 'Đồ Uống',
+      name: 'Bạc Xỉu',
+      price: 10000,
+      khuyenmai: '',
+      image:'/images/bacxiu'
+    },
+    {
       category: 'Bữa Sáng',
       name: 'Bacon & Biscuit',
       price: 1.9,
@@ -47,6 +54,13 @@ const data = {
       price: 3,
       khuyenmai: 'Hoàn 50k',
       image: '/images/s-mcdonalds-Big-Breakfast-Regular-Size-Biscuit.jpg',
+    },
+    {
+      category: 'Bữa Sáng',
+      name: 'Phở Bò',
+      price: 35000,
+      khuyenmai: 'Tặng khăn ướt',
+      image: '/images/phobo.jpeg',
     },
     {
       category: 'Burgers',

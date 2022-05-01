@@ -62,7 +62,7 @@ export default function ReviewScreen(props) {
           maxWidth="sm"
         >
           <DialogTitle className={styles.center}>
-            {product.name}
+            SỐ LƯỢNG
           </DialogTitle>
           <Box className={[styles.row, styles.center]}>
             <Button
@@ -129,7 +129,7 @@ export default function ReviewScreen(props) {
           {orderItems.map((orderItem) => (
             <Grid item md={12} key={orderItem.name}>
               <Card
-                className={styles.card}
+                className={styles.reviewcards}
                 onClick={() => productClickHandler(orderItem)}
               >
                 <CardActionArea>

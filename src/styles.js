@@ -77,8 +77,25 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     marginTop: 18,
   },
-  card: { margin: 10 },
-  media: { width: 200 },
+  card: { 
+    margin: 10,
+    height:310,
+    },
+  reviewcards:{
+    margin: 10
+  },
+  cardsContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  media: { 
+    maxWidth: 200,
+    minHeight:200,
+    filter:'brightness(105%)',
+     },
   name: {fontWeight:'bold'},
   ready: {
     backgroundColor: '#003080',
